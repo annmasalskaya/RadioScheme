@@ -3,8 +3,8 @@ package RadioScheme.RadioElements;
 public class InductanceCoil extends RadioElement
 {
     private double inductance;
-    private double inducedImpedance=0;
-    private double inducedVoltage=0;
+    private double inducedImpedance;
+    private double inducedVoltage;
 
     public InductanceCoil (double inductance )
     {
