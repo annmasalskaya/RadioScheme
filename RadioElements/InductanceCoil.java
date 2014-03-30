@@ -1,11 +1,10 @@
 package RadioScheme.RadioElements;
-import java.math.BigDecimal;
 
 public class InductanceCoil extends RadioElement
 {
     private double inductance;
-    private double inducedImpedance;
-    private double inducedVoltage;
+    private double inducedImpedance=0;
+    private double inducedVoltage=0;
 
     public InductanceCoil (double inductance )
     {
@@ -23,9 +22,9 @@ public class InductanceCoil extends RadioElement
        return inducedImpedance;
     }
 
-    public void Voltage(double voltage ) // напряжение на катушке индуктивности
+    public void Voltage(double current) // напряжение на катушке индуктивности
     {
-        inducedVoltage=voltage*inducedImpedance;
+        inducedVoltage=current*inducedImpedance;
     }
 
     public void showCharacteristics()
@@ -34,7 +33,8 @@ public class InductanceCoil extends RadioElement
         System.out.println("Индуктивное сопротивление =  " + rounding(inducedImpedance) + "  Oм ");
         System.out.println("Напряжение на катушке индуктивности =  " + rounding(inducedVoltage) + "  В ");
      }
-
-
-
+    public String name()
+    {
+        return "L";
+    }
 }

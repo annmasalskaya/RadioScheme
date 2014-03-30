@@ -1,5 +1,4 @@
 package RadioScheme.RadioElements;
-import java.math.BigDecimal;
 
 public class Condenser extends RadioElement
 {
@@ -23,16 +22,20 @@ public class Condenser extends RadioElement
         return capacityImpedance;
     }
 
-    public void Voltage(double voltage ) // напряжение на конденсаторе
+    public void Voltage(double current ) // напряжение на конденсаторе
     {
-        capacityVoltage=voltage*capacityImpedance;
+        capacityVoltage=current*capacityImpedance;
     }
 
-     public void showCharacteristics()  // Емкостное  сопротивление
+     public void showCharacteristics()
     {
         System.out.println("\n____Конденсатор___" );
         System.out.println("Емкостное сопротивление =  " +rounding(capacityImpedance) +"  Oм ");
         System.out.println("Напряжение на конденсаторе  =  " + rounding(capacityVoltage) + "  В ");
+    }
+    public String name()
+    {
+        return "C";
     }
 
 }
